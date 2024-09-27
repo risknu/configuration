@@ -13,7 +13,7 @@ First of all, these are very simple and aesthetically pleasing configurations th
 
 > I'm using Debian/Ubuntu, so everything works 100% on these systems.
 
-![a](examples/neofetch_show.png)
+![neofetch show screenshot](examples/neofetch_show.png)
 
 ### Terminal Color Scheme
 I'm using the [Catppuccin](https://github.com/catppuccin/catppuccin) color scheme, which is simple and looks pretty nice. If you need the `json` version to import it into the settings of Windows Terminal, here it is:
@@ -148,6 +148,49 @@ After installing, **make sure** to open Vim and run the following command:
 ```vim
 :PlugInstall
 ```
+
+---
+
+## VS Code xtensions
+Below, I will provide a list of what I consider to be the best extensions, primarily for programming in Python/C/C++, but you can also add your own tweaks to improve everything. The list is categorized by themes, and you can install them in VS Code as well:
+
+> I use the default **GitHub Dark** theme because, in my opinion, it is quite pleasant. I'll also include the editor settings below.
+
+```json
+{
+    "files.autoSave": "afterDelay",
+
+    "workbench.activityBar.location": "top",
+
+    "editor.quickSuggestions": {
+        "other": true, "comments": false, "strings": true
+    },
+    "editor.parameterHints.enabled": true,
+    "editor.suggestSelection": "first",
+    "editor.acceptSuggestionOnEnter": "smart",
+    "editor.snippetSuggestions": "top",
+    "editor.fontLigatures": true,
+    "editor.tabSize": 4,
+
+    "terminal.integrated.fontFamily": "Consolas, 'Courier New', monospace",
+    "terminal.integrated.fontSize": 14,
+    "terminal.integrated.cursorBlinking": true,
+
+    "extensions.ignoreRecommendations": false,
+    "extensions.autoUpdate": true,
+
+    "explorer.confirmDelete": false,
+}
+```
+
+**ASM/C/C++ ->**
+[CMake Tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools), [CMake](https://marketplace.visualstudio.com/items?itemName=twxs.cmake), [Makefile Tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.makefile-tools), [Include Path Autocomplete](https://marketplace.visualstudio.com/items?itemName=ajshort.include-autocomplete), [x86_64 ASM](https://marketplace.visualstudio.com/items?itemName=13xforever.language-x86-64-assembly), [C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools), [Better C++ Syntax](https://marketplace.visualstudio.com/items?itemName=jeff-hykin.better-cpp-syntax)
+
+**Python ->**[PyLance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), [Python Debugger](https://marketplace.visualstudio.com/items?itemName=ms-python.debugpy)
+
+**Spell ->**[Spell](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker), [RU Spell](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker-russian), [PL Spell](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker-polish), [UA Spell](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker-ukrainian), [UK Spell](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker-british-english)
+
+**Other ->**[GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens), [LivePreview](https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server), [Bongo Cat](https://marketplace.visualstudio.com/items?itemName=pixl-garden.BongoCat), [Path Autocomplete](https://marketplace.visualstudio.com/items?itemName=ionutvmi.path-autocomplete)
 
 ---
 
