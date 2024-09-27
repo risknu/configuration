@@ -1,22 +1,22 @@
-## прсотая установка
-просто скачайте репощзиторий и зщапстуите install.sh
+## Simple Installation
+Just download the repository and run `install.sh`:
 ```bash
 git clone https://github.com/risknu/configuration
 ```
 ```bash
 cd configuration && source install.sh
 ```
-> вам нужно будет прописать `:PlugInstall` самостоятельно в виме
+> You will need to manually type `:PlugInstall` in Vim.
 
-## мои конфигруации под всякие
-во первых все эт омаксимально простые и красивые конфигруации которые просто красиво выглядит да ну и просто красиво это самое да, вообще если хотите тчо-то доабвить или взять то можете все да а так вот вам щас покажу и расскажу что как 
+## My Configurations for Various Things
+First of all, these are very simple and aesthetically pleasing configurations that just look nice. Feel free to add or take anything you like. I'll show and explain what everything does.
 
-> если что у меня debian/ubuntu там это рабоает 100%
+> I'm using Debian/Ubuntu, so everything works 100% on these systems.
 
 ![a](examples/neofetch_show.png)
 
-### цветовая тема терминала
-цветовая тема у меня стоит [catppuccin](https://github.com/catppuccin/catppuccin) как по мне прикольная тема да и простая что полностью подходит, если вам нужен `json` версия чтобы просто вставить тему в json файл настроек тем в windows terminal то вот:
+### Terminal Color Scheme
+I'm using the [Catppuccin](https://github.com/catppuccin/catppuccin) color scheme, which is simple and looks pretty nice. If you need the `json` version to import it into the settings of Windows Terminal, here it is:
 ```json
 {
     "background": "#181926",
@@ -43,51 +43,53 @@ cd configuration && source install.sh
 }
 ```
 
-### базовые устанвоки под систему
-если у вас линукс debian/ubuntu то вот что вам нужно:
+### Basic System Setup
+If you're using Debian/Ubuntu, you need to install the following:
 ```bash
 sudo apt install build-essential cmake python3-dev
 ```
 
-### уставнока zsh и ohmyzsh вместо bash
-установим лучшую оболочку которую я знаю это zsh и [ohmyzsh](https://github.com/ohmyzsh/ohmyzsh/) которая даст нам возможность еще и ставить всякие приколы
+### Installing Zsh and Oh My Zsh Instead of Bash
+We'll install Zsh, which is the best shell in my opinion, and [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh/) to add some cool features.
 
-**установка zsh оболочки:**
+**Install the Zsh shell:**
 ```bash
 sudo apt install zsh
 ```
 
-**установка ohmyzsh:**
+**Install Oh My Zsh:**
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-дальше перейдем к настройкам zsh для этого через nano или vim просто зайдите в файл `~/.zshrc` и впишите тудпа вот такие вот данные:
-```properties
+Next, we'll configure Zsh. Open the file `~/.zshrc` in nano or vim and add the following:
+```bash
+export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="robbyrussell"
-plugins=(git zsh-syntax-highlighting bundler zsh)
+plugins=(git zsh-syntax-highlighting bundler)
 source $ZSH/oh-my-zsh.sh
 ```
-после чего устноавим подсветку чтобы поставить ее правльно после уставноки обезатльно перезайдите в терминал или обновите оболочку:
+
+Afterward, install syntax highlighting. Be sure to restart the terminal or refresh the shell after installation:
 ```bash
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ```
 
-### уставнока VIM
-сейчас мы уставноми улушченный вим который как по мне иедально подлъходит для программирования на c/cpp/python потому-что имеет полный для этого фуцнкционал у вас должен быть скаченный также саммый новый vim который только мождет быть
+### Installing VIM
+Now we'll install an enhanced version of Vim, which is great for programming in C/C++/Python because it has full support for these languages. Make sure to have the latest version of Vim installed.
 
-**уставнока vim:**
+**Install Vim:**
 ```bash
 sudo apt install vim
 ```
 
-**установка плагинов:**
+**Install Plugins:**
 ```bash
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
-дальше мы должны натсроит конфигурации vim в файлк `~/.vimrc` и там мы должнл написать примерно вот такой вот файлик:
+Next, we need to configure Vim. Open `~/.vimrc` and add the following:
 ```vim
 call plug#begin('~/.vim/plugged')
 
@@ -141,10 +143,13 @@ Plug 'tmhedberg/SimpylFold'           " Automatic code folding for shell scripts
 
 call plug#end()
 ```
-после уставноки **ОБЕЗАТЕЛЬНО** зайдите в вим и пропишите вот это:
+
+After installing, **make sure** to open Vim and run the following command:
 ```vim
 :PlugInstall
 ```
 
-## ошибки которые у вас могут быть
-YouCompleteMe unavailable: requires Vim 9.1.0016+ - здесь просто обновите вим если он не обновялеться скачайте последнюю версию с гитхаб и соберите ее сами
+---
+
+## Potential Issues You May Encounter
+**YouCompleteMe unavailable: requires Vim 9.1.0016+** - If you get this error, simply update Vim. If it doesn't update through your package manager, download the latest version from GitHub and compile it manually.
